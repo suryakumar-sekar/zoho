@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid-Table</title>
+    <link rel="stylesheet"  type="text/css" href="/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="navigation">
+        <div class="search-wrapper">
+          <input
+            type="text"
+            placeholder="search"
+            oninput="searchData(this.value)"
+          />
+        </div>
+        <div class="toggle-view-wrapper">
+          <ul class="toggle-list">
+            <li onclick="changeview('grid')" id="grid" class="active">
+              Gridview
+            </li>
+            <li>|</li>
+            <li onclick="changeview('table')" id="table">Tableview</li>
+          </ul>
+        </div>
+      </div>
+      <div class="grid-view" id="grid-view"></div>
+      <div class="table-view hide" id="table-view">
+        <table class="table-scroll" id="table-scroll">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th onclick="sortTableByName()" class="name-table">
+                Name
+                <div class="arrow-outer">
+                  <div class="up-arrow" id="up"></div>
+                  <div class="down-arrow" id="down"></div>
+                </div>
+              </th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody id="tbody" class="tbody-wrapper"></tbody>
+        </table>
+      </div>
+    </div>
+    <div id="loader" class="hide"><h5>Loading....</h5></div>
+  </body>
+  <script src="/script.js"></script>
+</html>
